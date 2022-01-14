@@ -17,10 +17,6 @@ export default function Home() {
         </Head>
 
         <main className={styles.main}>
-          <h1 className={styles.title}>
-            Програми та обіцянки політичних партій
-          </h1>
-
           <div className={styles.grid}>
             <ToggleList />
             {/* <Table /> */}

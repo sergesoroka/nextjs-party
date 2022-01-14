@@ -65,44 +65,44 @@
     border: 1px solid rgb(0, 227, 72);
 }
 
-.btnDone {
-    color: rgb(0, 227, 72);
-    background-color: #fff;
-    border: 1px solid rgb(0, 227, 72);
+.btnDone, .btnNotDone, .btnInProgress, .btnAll {
+    color: rgb(0, 68, 92);
+    background-color: #CEDFDF;
+    border: 1px solid rgb(0, 68, 92);
 }
 .btnNotDoneActive {
-    color: #fff;
+    color: #CEDFDF;
     background-color: rgb(227, 87, 0);
-    border: 2px solid rgb(227, 87, 0);
-}
-
-.btnNotDone {
-    color: rgb(227, 87, 0);
-    background-color: #fff;
     border: 1px solid rgb(227, 87, 0);
 }
 
+/* .btnNotDone {
+    color: rgb(227, 87, 0);
+    background-color: #CEDFDF;
+    border: 1px solid rgb(227, 87, 0);
+} */
+
 .btnInProgressActive {
-    color: #fff;
+    color: #CEDFDF;
     background-color: rgb(237, 206, 0);
     border: 1px solid rgb(237, 206, 0);
 }
 
-.btnInProgress { 
+/* .btnInProgress { 
     color: rgb(237, 206, 0);
-    background-color: #fff;
+    background-color: #CEDFDF;
     border: 1px solid rgb(237, 206, 0);
-}
+} */
 
-.btnAll {  
+/* .btnAll {  
     color: rgb(111, 157, 255); 
-    background: #fff;
+    background: #CEDFDF;
     border: 1px solid rgb(111, 157, 255);
-}
+} */
 
 .btnAllActive {
     padding: 6px 12px;
-    color: #fff;
+    color: #CEDFDF;
     background-color: rgb(111, 157, 255);
     border: 1px solid rgb(111, 157, 255);
 }

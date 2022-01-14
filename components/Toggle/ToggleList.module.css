@@ -4,7 +4,6 @@
     padding: 18px;
     margin: 2px 0;
     border-radius: 6px;
-    border-left: 8px solid rgba(222, 2, 2, 0.879);
     cursor: pointer;
 }
 
@@ -23,4 +22,45 @@
     color: #00666c;
     text-transform: uppercase;
     text-align: center;
+}
+
+.priorityText {
+    width: 80%;
+}
+
+.labelDone {
+    color: #fff;
+    background-color: rgb(0, 179, 15);
+    border: 1px solid rgb(0, 179, 15);
+    width: fit-content;
+    padding: 4px 8px;
+    font-size: .8rem;
+    border-radius: 3px;
+    margin: -2px 0 0 10px;
+    float: right;
+   
+}
+
+.labelNotDone {
+    color: #fff;
+    background-color: rgb(179, 48, 0);
+    border: 1px solid rgb(179, 48, 0);
+    width: fit-content;
+    padding: 4px 8px;
+    font-size: .8rem;
+    border-radius: 3px;
+    margin: -2px 0 0 10px;
+    float: right;
+}
+
+.labelProgress {
+    color: #fff;
+    background-color: rgb(218, 193, 0);
+    border: 1px solid rgb(218, 193, 0);
+    width: fit-content;
+    padding: 4px 8px;
+    font-size: .8rem;
+    border-radius: 3px;
+    margin: -2px 0 0 10px;
+    float: right;
 }

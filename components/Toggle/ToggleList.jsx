@@ -6,11 +6,18 @@ import styles from '../Table.module.css';
 export default function ToggleList() {
   const [progress, setProgress] = useState('all');
   const renderData = partyProgram.map(note => {
-    return (
-      <>
-        <ToggleItem note={note} key={note.id} />
-      </>
-    );
+    if (progress === 'all') {
+      return <ToggleItem note={note} key={note.id} />;
+    }
+    if (progress === 'done' && note.done) {
+      return <ToggleItem note={note} key={note.id} />;
+    }
+    if (progress === 'not_done' && note.not_done) {
+      return <ToggleItem note={note} key={note.id} />;
+    }
+    if (progress === 'in_progress' && note.in_progress) {
+      return <ToggleItem note={note} key={note.id} />;
+    }
   });
 
   return (
