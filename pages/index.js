@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Header from '../components/Header';
 import Table from '../components/Table';
+import ToggleList from '../components/Toggle/ToggleList';
 import styles from '../styles/Home.module.css';
 
 export default function Home() {
@@ -21,7 +22,8 @@ export default function Home() {
           </h1>
 
           <div className={styles.grid}>
-            <Table />
+            <ToggleList />
+            {/* <Table /> */}
           </div>
         </main>
 

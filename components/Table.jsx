@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import styles from './Table.module.css';
 import { dataSlugi } from '../data/slugi_program';
+import { partyProgram } from '../data/party_program';
 
 export default function Table() {
-  const [progress, setProgress] = useState('in_progress');
+  const [progress, setProgress] = useState('all');
 
-  const renderData = dataSlugi.map(item => {
+  const renderData = partyProgram.map(item => {
     if (progress === 'all') {
       return (
         <tr className={styles.tableRow} key={item.priority}>
@@ -16,8 +17,9 @@ export default function Table() {
               (item.in_progress && styles.markerInProgress)
             }
           >
-            {item.priority}
+            {item.id}
           </td>
+          <td>{item.priority}</td>
           <td>{item.what_done}</td>
           <td>{item.in_whole}</td>
           <td>{item.basis}</td>
@@ -35,8 +37,9 @@ export default function Table() {
               (item.in_progress && styles.markerInProgress)
             }
           >
-            {item.priority}
+            {item.id}
           </td>
+          <td>{item.priority}</td>
           <td>{item.what_done}</td>
           <td>{item.in_whole}</td>
           <td>{item.basis}</td>
@@ -54,8 +57,9 @@ export default function Table() {
               (item.in_progress && styles.markerInProgress)
             }
           >
-            {item.priority}
+            {item.id}
           </td>
+          <td>{item.priority}</td>
           <td>{item.what_done}</td>
           <td>{item.in_whole}</td>
           <td>{item.basis}</td>
@@ -73,8 +77,9 @@ export default function Table() {
               (item.in_progress && styles.markerInProgress)
             }
           >
-            {item.priority}
+            {item.id}
           </td>
+          <td>{item.priority}</td>
           <td>{item.what_done}</td>
           <td>{item.in_whole}</td>
           <td>{item.basis}</td>
@@ -86,7 +91,7 @@ export default function Table() {
 
   return (
     <>
-      <div>
+      <div className={styles.btnGroup}>
         <button
           className={progress === 'all' ? styles.btnAllActive : styles.btnAll}
           onClick={() => setProgress('all')}
@@ -125,6 +130,7 @@ export default function Table() {
       <table className={styles.table}>
         <thead>
           <tr>
+            <th>&nbsp;</th>
             <th>Пріоритети</th>
             <th>Що&nbsp;зробили</th>
             <th>В&nbsp;цілому</th>

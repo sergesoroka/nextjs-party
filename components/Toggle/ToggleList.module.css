@@ -1,0 +1,26 @@
+.row {
+    width: 100%;
+    background: #fff;
+    padding: 18px;
+    margin: 2px 0;
+    border-radius: 6px;
+    border-left: 8px solid rgba(222, 2, 2, 0.879);
+    cursor: pointer;
+}
+
+.discription {
+    margin: 12px 0 0 0;
+}
+
+.emph {
+    font-weight: 700;
+}
+
+.category {
+    background: aliceblue;
+    padding: 12px;
+    font-size: .7rem;
+    color: #00666c;
+    text-transform: uppercase;
+    text-align: center;
+}
