@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
 import Select from 'react-select';
+import styles from './Table.module.css';
 
 const options = [
   { value: 'sluga', label: 'Слуга народу' },
-  { value: 'strawberry', label: 'Strawberry' },
-  { value: 'vanilla', label: 'Vanilla' },
+  { value: 'es', label: 'Європейська солідарність' },
+  { value: 'op', label: 'ОПЗЖ' },
 ];
 
 const customStyles = {
   option: (provided, state) => ({
     ...provided,
     // borderBottom: '1px dotted pink',
-    color: state.isSelected ? 'red' : 'green',
+    color: state.isSelected ? 'white' : '#00980F',
     padding: 10
   }),
 
@@ -35,7 +36,7 @@ export default function SelectCategory() {
     const [selectedOption, setSelectedOption] = useState('Слуга народу');
 
   return (
-    <div style={{width: '300px'}}>
+    <div className={styles.selectContainer} style={{width: '300px'}}>
       <Select
         styles={ customStyles}
         defaultValue={selectedOption}
