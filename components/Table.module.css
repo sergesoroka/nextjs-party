@@ -1,25 +1,60 @@
 .table {
     width: 100%;
-    /* margin: .5rem 0; */
     text-align: left;
-    line-height: 1.2rem;
-}
-
-.table>thead>tr>th,
-.tableRow>td {
-    height: 3rem;
-    padding: 0 1rem;
-    /* border-bottom: 1px solid #f0f0f0; */
-    padding: 20px 12px;
+    line-height: 1.2rem; 
+    border-collapse: inherit;
+    border-radius: 30px;
+    border-spacing: 0 6px;
+    margin: 16px 0;
     
 }
 
+.table>tbody>tr td:first-child { border-top-left-radius: 16px; }
+.table>tbody>tr td:last-child { border-top-right-radius: 16px; }
+.table>tbody>tr td:first-child { border-bottom-left-radius: 16px; }
+.table>tbody>tr td:last-child { border-bottom-right-radius: 16px; }
 
-.table>thead>tr>th
-{font-size: 0.7rem;
-    text-transform: uppercase;
+.table>thead {
+    line-height: 26px;
+}
+
+.table>tbody>tr {
+    background-color: #fff;
+}
+.table>thead>tr>th {
+    background: none;
+    color: #fff;
+    padding: 0 12px;
+}
+
+.tableRow>td {
+    height: 3rem;
+    padding: 0 1rem;
+    margin-bottom: 12px;
+    padding: 20px 12px;
+    
+    
+}
+.row {
+    display: flex;
+    width: 100%;
+    color: #fff;
+    padding: 18px;
+    margin: 4px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+
+.table>thead>tr>th {
+    font-size: 1.1rem;
     font-weight: 500;
-    letter-spacing: 0.1rem;
+    
+}
+
+.mobileHeadings {
+    font-weight: 700;
+    display: none;
 }
 
 
@@ -31,78 +66,65 @@
      .tableRow>td {
         display: block;
         height: auto;
+        margin: 0;
+        padding: 12px 18px;
      }
+
+     
      .table>thead {
          display: none;
      }
+     .mobileHeadings {
+        font-weight: 700;
+        display: inline-block;
+    }
 }
 .btnGroup>button {
     margin: 6px; 
-    padding: 6px 12px;
-    border-radius: 3px;
+    padding: 8px 16px;
+    border: 1px solid #fff;
+    border-radius: 20px;
     text-transform: uppercase;
     letter-spacing:0.1rem;
     font-size: 12px;
+    background: none;
+    color: #fff;
+    line-height: 16px;
 }
-
-.markerDone {
-    border-left: 6px solid rgb(0, 227, 72);
-    margin-left:0;
+.btnGroup>button:hover {
+    background-color: #F65329;
+    border-color: #F65329;
 }
-
-.markerNotDone {
-    border-left: 6px solid rgb(227, 87, 0)
-}
-
-.markerInProgress {
-    border-left: 6px solid rgb(255, 234, 7)
-}
-
 
 .btnDoneActive {
-    color: #fff;
-    background-color: rgb(0, 227, 72);
-    border: 1px solid rgb(0, 227, 72);
+    color: #111111 !important;
+    background: #fff !important;
 }
 
-.btnDone, .btnNotDone, .btnInProgress, .btnAll {
-    color: rgb(0, 68, 92);
-    background-color: #CEDFDF;
-    border: 1px solid rgb(0, 68, 92);
-}
+
+
 .btnNotDoneActive {
-    color: #CEDFDF;
-    background-color: rgb(227, 87, 0);
-    border: 1px solid rgb(227, 87, 0);
+    color: #111111 !important;
+    background: #fff !important;
 }
 
-/* .btnNotDone {
-    color: rgb(227, 87, 0);
-    background-color: #CEDFDF;
-    border: 1px solid rgb(227, 87, 0);
-} */
+
 
 .btnInProgressActive {
-    color: #CEDFDF;
-    background-color: rgb(237, 206, 0);
-    border: 1px solid rgb(237, 206, 0);
+    color: #111111 !important;
+    background: #fff !important;
 }
 
-/* .btnInProgress { 
-    color: rgb(237, 206, 0);
-    background-color: #CEDFDF;
-    border: 1px solid rgb(237, 206, 0);
-} */
-
-/* .btnAll {  
-    color: rgb(111, 157, 255); 
-    background: #CEDFDF;
-    border: 1px solid rgb(111, 157, 255);
-} */
 
 .btnAllActive {
-    padding: 6px 12px;
-    color: #CEDFDF;
-    background-color: rgb(111, 157, 255);
-    border: 1px solid rgb(111, 157, 255);
+    color: #111111 !important;
+    background: #fff !important;
+}
+
+.btnAllActive:hover,
+.btnNotDoneActive:hover,
+.btnDoneActive:hover,
+.btnInProgressActive:hover
+ {
+    border-color: #fff !important;
 }

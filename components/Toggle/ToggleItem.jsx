@@ -2,7 +2,7 @@ import { useState } from 'react';
 import styles from './ToggleList.module.css';
 
 export default function ToggleItem({ note }) {
-  const [toggle, setToggle] = useState(false);
+  const [toggle, setToggle] = useState(true);
 
   return (
     <div
@@ -10,33 +10,23 @@ export default function ToggleItem({ note }) {
       className={styles.row}
       onClick={() => setToggle(!toggle)}
     >
-      {note.done ? <div className={styles.labelDone}>ВИКОНАНО</div> : null}
+      {note.done ? <div className={styles.labelDone}>&nbsp;</div> : null}
       {note.not_done ? (
-        <div className={styles.labelNotDone}>НЕ ВИКОНАНО</div>
+        <div className={styles.labelNotDone}>&nbsp;</div>
       ) : null}
       {note.in_progress ? (
-        <div className={styles.labelProgress}>В ПРОЦЕСІ</div>
+        <div className={styles.labelProgress}>&nbsp;</div>
       ) : null}
-      <div className={styles.priorityText}>{note.priority}</div>
-      {toggle ? (
-        <div className={styles.discription}>
-          {note.what_done ? (
-            <p>
-              <span className={styles.emph}>Що зробили: </span>
-              {note.what_done}
-            </p>
-          ) : null}
-          {note.in_whole ? (
-            <p>
-              <span className={styles.emph}>В цілому: </span>
-              {note.in_whole}
-            </p>
-          ) : null}
-          {note.category ? (
-            <p className={styles.category}>{note.category}</p>
-          ) : null}
-        </div>
-      ) : null}
+
+      
+
+      <div className={styles.rowItem}>
+        <div style={{width: '520px'}}>{note.priority}</div>
+        <div style={{width: '520px'}}>{note.what_done}</div>
+        <div style={{width: '120px'}}>{note.in_whole}</div>
+        <div style={{width: '120px'}}>{note.basis}</div>
+        <div style={{width: '120px'}}>{note.registered}+</div>
+      </div>    
     </div>
   );
 }

@@ -1,12 +1,22 @@
 .row {
-    width: 100%;
+    display: flex;
+    align-items: center;
+    /* width: 100%; */
     background: #fff;
-    padding: 18px;
-    margin: 2px 0;
-    border-radius: 6px;
-    cursor: pointer;
+    padding: 6px 12px;
+    margin: 4px 12px;
+    border-radius: 18px;
+
 }
 
+.rowItem {
+    display: flex;
+    align-items: center;
+    margin: 8px 4px;
+}
+.rowItem>div {
+    padding-right: 40px;
+}
 .discription {
     margin: 12px 0 0 0;
 }
@@ -25,42 +35,34 @@
 }
 
 .priorityText {
-    width: 80%;
+    width: 320px;
 }
 
 .labelDone {
-    color: #fff;
+    
     background-color: rgb(0, 179, 15);
-    border: 1px solid rgb(0, 179, 15);
-    width: fit-content;
-    padding: 4px 8px;
-    font-size: .8rem;
-    border-radius: 3px;
-    margin: -2px 0 0 10px;
-    float: right;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+   
+    margin-right: 14px;
    
 }
 
 .labelNotDone {
-    color: #fff;
     background-color: rgb(179, 48, 0);
-    border: 1px solid rgb(179, 48, 0);
-    width: fit-content;
-    padding: 4px 8px;
-    font-size: .8rem;
-    border-radius: 3px;
-    margin: -2px 0 0 10px;
-    float: right;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 14px;
+    
 }
 
 .labelProgress {
-    color: #fff;
     background-color: rgb(218, 193, 0);
-    border: 1px solid rgb(218, 193, 0);
-    width: fit-content;
-    padding: 4px 8px;
-    font-size: .8rem;
-    border-radius: 3px;
-    margin: -2px 0 0 10px;
-    float: right;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 14px;
+    
 }

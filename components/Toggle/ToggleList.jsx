@@ -5,6 +5,7 @@ import styles from '../Table.module.css';
 
 export default function ToggleList() {
   const [progress, setProgress] = useState('all');
+  
   const renderData = partyProgram.map(note => {
     if (progress === 'all') {
       return <ToggleItem note={note} key={note.id} />;
@@ -57,6 +58,14 @@ export default function ToggleList() {
         >
           В процесі
         </button>
+      </div>
+      <div className={styles.row}>
+      <div style={{width: '54px'}}> </div>
+        <div style={{width: '520px'}}>Пріорітети</div>
+        <div style={{width: '520px'}}>Що зробили?</div>
+        <div style={{width: '120px'}}>В цілому</div>
+        <div style={{width: '120px'}}>За основу</div>
+        <div style={{width: '120px'}}>Зареєстрований</div>
       </div>
       {renderData}
     </>

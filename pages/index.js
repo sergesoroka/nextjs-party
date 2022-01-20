@@ -8,7 +8,7 @@ import styles from '../styles/Home.module.css';
 export default function Home() {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <div className={styles.container}>
         <Head>
           <title>Програми та обіцянки політичних партій</title>
@@ -18,8 +18,8 @@ export default function Home() {
 
         <main className={styles.main}>
           <div className={styles.grid}>
-            <ToggleList />
-            {/* <Table /> */}
+            {/* <ToggleList /> */}
+            <Table />
           </div>
         </main>
 
