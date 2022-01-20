@@ -18,16 +18,11 @@ export default function TableRow({item}) {
             }
           </td>
           <td><span className={styles.mobileHeadings}>Пріоритети:&nbsp;</span>{item.priority}</td>
-          <td><span className={styles.mobileHeadings}>Що&nbsp;зробили</span>{item.what_done}</td>
-          <td><span className={styles.mobileHeadings}>В&nbsp;цілому</span>{item.in_whole}</td>
-          <td><span className={styles.mobileHeadings}>За&nbsp;основу</span>{item.basis}</td>
-          <td><span className={styles.mobileHeadings}>Зареєстрований</span>{item.registered}</td>
+          <td><span className={styles.mobileHeadings}>Що&nbsp;зробили&nbsp;</span>{item.what_done}</td>
+          <td><span className={styles.mobileHeadings}>В&nbsp;цілому&nbsp;</span>{item.in_whole}</td>
+          <td><span className={styles.mobileHeadings}>За&nbsp;основу&nbsp;</span>{item.basis}</td>
+          <td><span className={styles.mobileHeadings}>Зареєстрований&nbsp;</span>{item.registered}</td>
         </tr>
     )
 }
 
-{/* <th>Пріоритети</th>
-<th>Що&nbsp;зробили</th>
-<th>В&nbsp;цілому</th>
-<th>За&nbsp;основу</th>
-<th>Зареєстрований</th> */}
