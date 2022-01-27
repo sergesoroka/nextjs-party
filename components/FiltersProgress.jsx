@@ -9,9 +9,9 @@ export default function FiltersProgress({progress, setProgress}) {
           className={progress === 'all' ? styles.btnAllActive : styles.btnAll}
           onClick={() => setProgress('all')}
         >
-          <span style={{display: 'inline-block', marginRight: '8px'}}>Всі</span>
           <UnorderedListOutlined 
-            style={progress === 'all' ? {color: '#1B1B1B', fontSize: '16px'}: {color: '#FFFFFF', fontSize: '16px'}} />
+            style={progress === 'all' ? {color: '#FFFFFF', fontSize: '16px'}: {color: '#ccc', fontSize: '16px'}} />
+          <span style={{display: 'inline-block', marginLeft: '8px'}}>Всі</span>
         </button>
         <button
           className={
@@ -19,8 +19,8 @@ export default function FiltersProgress({progress, setProgress}) {
           }
           onClick={() => setProgress('done')}
         >
-          <span style={{display: 'inline-block', marginRight: '8px'}}>Виконано</span>
-          <CheckOutlined style={progress === 'done' ? {color: '#00980F', fontSize: '16px'}: {color: '#FFFFFF', fontSize: '16px'}}/>
+          <CheckOutlined style={progress === 'done' ? {color: '#00980F', fontSize: '16px'}: {color: '#ccc', fontSize: '16px'}}/>
+          <span style={{display: 'inline-block', marginLeft: '8px'}}>Виконано</span>
           
         </button>
         <button
@@ -31,8 +31,8 @@ export default function FiltersProgress({progress, setProgress}) {
           }
           onClick={() => setProgress('not_done')}
         >
-          <span style={{display: 'inline-block', marginRight: '8px'}}>Не виконано</span>
-          <CloseOutlined style={progress === 'not_done' ? {color: '#F65329', fontSize: '16px'}: {color: '#FFFFFF', fontSize: '16px'}} />
+          <CloseOutlined style={progress === 'not_done' ? {color: '#F65329', fontSize: '16px'}: {color: '#ccc', fontSize: '16px'}} />
+          <span style={{display: 'inline-block', marginLeft: '8px'}}>Не виконано</span>
         </button>
         <button
           className={
@@ -42,8 +42,8 @@ export default function FiltersProgress({progress, setProgress}) {
           }
           onClick={() => setProgress('in_progress')}
         >
-          <span style={{display: 'inline-block', marginRight: '8px'}}>В процесі</span>
-          <ClockCircleOutlined style={progress === 'in_progress' ? {color: '#FFB800', fontSize: '16px'}: {color: '#FFFFFF', fontSize: '16px'}} />
+          <ClockCircleOutlined style={progress === 'in_progress' ? {color: '#ffd500', fontSize: '16px'}: {color: '#ccc', fontSize: '16px'}} />
+          <span style={{display: 'inline-block', marginLeft: '8px'}}>В процесі</span>
         </button>
       </div>
     )

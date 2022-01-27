@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Header from '../components/Header';
 import Table from '../components/Table';
-import ToggleList from '../components/Toggle/ToggleList';
+import PieChart from '../components/PieChart';
 import styles from '../styles/Home.module.css';
 
 export default function Home() {
@@ -18,12 +18,12 @@ export default function Home() {
 
         <main className={styles.main}>
           <div className={styles.grid}>
-            {/* <ToggleList /> */}
+            {/* <PieChart /> */}
             <Table />
           </div>
         </main>
 
-        <footer className={styles.footer}>
+        {/* <footer className={styles.footer}>
           <a
             href='https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app'
             target='_blank'
@@ -32,7 +32,7 @@ export default function Home() {
             VOX Ukraine
             <span className={styles.logo}></span>
           </a>
-        </footer>
+        </footer> */}
       </div>
     </>
   );

@@ -1,6 +1,6 @@
 .container {
   padding: 0 2rem;
-  background: radial-gradient(#914E3B, #111111 );
+  background: #30201C;
 }
 @media screen and (max-width: 600px) {
   .container {
