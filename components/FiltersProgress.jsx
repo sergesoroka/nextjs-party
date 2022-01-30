@@ -2,6 +2,7 @@ import styles from './Table.module.css';
 import { CheckOutlined, CloseOutlined, ClockCircleOutlined, UnorderedListOutlined } from '@ant-design/icons';
 
 export default function FiltersProgress({progress, setProgress}) {
+
     return (
         <div className={styles.btnGroup}>
 

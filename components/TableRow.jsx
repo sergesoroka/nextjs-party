@@ -5,9 +5,14 @@ import NotDoneIcon from '../icons/not-done.svg'
 import InProgressIcon from '../icons/in-progress.svg'
 import styles from './Table.module.css';
 
-export default function TableRow({item}) {
+export default function TableRow({item, category}) {
+  
+ 
+
+ 
     return (
-        <tr className={styles.tableRow} key={item.priority}>
+      
+        <tr className={styles.tableRow} >
           <td
             className={
               (item.done && styles.markerDone) ||
@@ -24,8 +29,7 @@ export default function TableRow({item}) {
           <td><span className={styles.mobileHeadings}>Пріоритети:&nbsp;</span>{item.priority}</td>
           <td><span className={styles.mobileHeadings}>Що&nbsp;зробили&nbsp;</span>{item.what_done}</td>
           <td><span className={styles.mobileHeadings}>В&nbsp;цілому&nbsp;</span>{item.in_whole}</td>
-          {/* <td><span className={styles.mobileHeadings}>За&nbsp;основу&nbsp;</span>{item.basis}</td>
-          <td><span className={styles.mobileHeadings}>Зареєстрований&nbsp;</span>{item.registered}</td> */}
+          
         </tr>
     )
 }

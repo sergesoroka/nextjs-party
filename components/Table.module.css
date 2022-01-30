@@ -154,12 +154,21 @@
     display: flex;
     justify-content: flex-end;
     flex-wrap: wrap;
-    cursor: pointer;
+    
 }
 .categoryButton {
     margin: 12px;
     padding-bottom: 2px;
+    border-bottom: 2px solid #31201c !important;
+    cursor: pointer;
 }
+.categoryButtonActive {
+    margin: 12px;
+    border-bottom: 2px solid #ff4716 !important;
+    margin-bottom: 2px;
+    cursor: pointer;
+}
+
 .categoryButton:hover {
     border-bottom: 2px solid #ccc;
     margin-bottom: 2px;
@@ -167,7 +176,13 @@
 
 .categoryIcon {
     display: inline-block;
-    fill: #ccc;
+    fill: #ccc !important;
+    margin: -4px 0;
+}
+
+.categoryIconActive {
+    display: inline-block;
+    fill: #ff4716 !important;
     margin: -4px 0;
 }
 
@@ -176,5 +191,13 @@
     display: inline-block;
     margin: 0 0 0 8px;
     font-size: 0.9rem
+}
+
+.categoryNameActive {
+    color: #ccc;
+    display: inline-block;
+    margin: 0 0 0 8px;
+    font-size: 0.9rem;
+    color: #ff4716 !important;
 }
 

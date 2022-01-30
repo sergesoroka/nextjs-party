@@ -11,23 +11,34 @@ import {
 import TableRow from './TableRow';
 import FiltersProgress from './FiltersProgress';
 import SelectParty from './SelectParty';
-import SelectCategory from './SelectCategory';
+import CheckBox from './CheckBox'
 
 export default function Table() {
   const [progress, setProgress] = useState('all');
+  const [category, setCategory] = useState('all');
+  const [filtered, setFiltered] = useState([])
+  
+  const filteredData = dataSlugi.filter(note => {
+    return (
+     filtered.includes(note.tag) 
+    )
+  });
+  
+  const handleFilters = (filters, category) => setFiltered([...filters]); 
+  const renderItems = filtered.length === 0 ? dataSlugi : filteredData;
 
-  const renderedDataCatCurruption = dataSlugi.map(item => {
+  const renderedData = renderItems.map(item => {
     if (progress === 'all') {
-      return <TableRow item={item} />;
+      return <TableRow item={item} category={category} key={item.id}/>;
     }
     if (progress === 'done' && item.done) {
-      return <TableRow item={item} />;
+      return <TableRow item={item} category={category} key={item.id}/>;
     }
     if (progress === 'not_done' && item.not_done) {
-      return <TableRow item={item} />;
+      return <TableRow item={item} category={category} key={item.id}/>;
     }
     if (progress === 'in_progress' && item.in_progress) {
-      return <TableRow item={item} />;
+      return <TableRow item={item} category={category} key={item.id}/>;
     }
   });
 
@@ -35,7 +46,8 @@ export default function Table() {
     <>
       <SelectParty />
       <FiltersProgress progress={progress} setProgress={setProgress} />
-      <SelectCategory />
+      <CheckBox handleFilters={filters => handleFilters(filters, 'category')}/>
+      
       <table className={styles.table}>
         <thead>
           <tr>
@@ -44,11 +56,9 @@ export default function Table() {
             <th>Пріоритети</th>
             <th>Що&nbsp;зробили</th>
             <th>Реалізація</th>
-            {/* <th>За&nbsp;основу</th>
-            <th>Зареєстрований</th> */}
           </tr>
         </thead>
-        <tbody>{renderedDataCatCurruption}</tbody>
+        <tbody>{renderedData}</tbody>
       </table>
     </>
   );
