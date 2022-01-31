@@ -1,6 +1,11 @@
+.layout {
+  background: #30201C;
+}
+
 .container {
   padding: 0 2rem;
   background: #30201C;
+  
 }
 @media screen and (max-width: 600px) {
   .container {
@@ -10,7 +15,7 @@
 }
 .main {
   min-height: 100vh;
-  padding: 4rem 0;
+ 
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -49,7 +54,7 @@
   margin: 0;
   line-height: 1.15;
   font-size: 1.2rem;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 }
 
 .title,
@@ -111,19 +116,53 @@
 }
 
 .header {
-  display: flex;
-  align-items: center;
-  background-color: rgb(0, 83, 108);
+  
+  background-color: #30201C;
   flex-wrap: wrap;
-  height: 40px;
+  height: 120px;
   padding: .5rem 2rem;
-  color:#d1eeee;
+  color: #ccc;
+  
+}
+
+.linkMenu, .linkMenuActive {
+  margin: 0 12px;
+  background: #31201c;
+  padding: 8px 24px;
+  border: 1px solid #ccc;
+  border-radius: 24px;
+  color: #ccc;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.linkMenuActive {
+  background: #ff4716;
+  border-color: #ff4716;
+  color: #fff;
+}
+
+.linkMenu:hover {
+  border-color: #a7a7a7;
+  color: #a7a7a7;
 }
 
 .logo {
   height: 1em;
   margin-left: 0.5rem;
 }
+.chartWrapper {
+  display: 'flex';
+}
+.chartHeading {
+  text-align: center;
+    color: #ccc;
+    font-weight: 400;
+    height: 26px;
+    font-size: 0.95rem
+}
+
+
+
 
 @media (max-width: 600px) {
   .grid {

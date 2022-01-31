@@ -1,23 +1,36 @@
 import { PieChart, Pie, ResponsiveContainer, Tooltip } from 'recharts';
+import styles from '../styles/Home.module.css';
 
-export default function PieChartComp() {
-  const data02 = [
-    { name: 'Group A', value: 2400, fill: '#F65329' },
-    { name: 'Group B', value: 4567, fill: '#00980F' },
-    { name: 'Group C', value: 1398, fill: '#FFB800' }
+export default function PieChartComp({data, title}) {
+
+const dataDone = data.map(item => item.done).filter(it => it > 0).length
+const dataNotDone = data.map(item => item.not_done).filter(it => it > 0).length;
+const dataInProgress = data.map(item => item.in_progress).filter(it => it > 0).length;
+
+  const dataSlugi = [
+    { name: 'Done', value: 47.3, fill: '#009f08', stroke: 'none' },
+    { name: 'Not Done', value: 20.3, fill: '#ff4716', stroke: 'none' },
+    { name: 'In Progress', value: 32.4, fill: '#ffd500', stroke: 'none' }
   ];
   return (
-    <PieChart width={400} height={220}>
-      <Pie
-        dataKey='value'
-        data={data02}
-        cx={100}
-        cy={80}
-        innerRadius={60}
-        outerRadius={80}
-        fill='#F65329'
-      />
-      <Tooltip />
-    </PieChart>
+    <>
+    
+    <div style={{width: '280px'}}>
+      <h3 className={styles.chartHeading}>{title}</h3>
+        <PieChart width={200} height={300}>
+          <Pie
+            dataKey='value'
+            data={dataSlugi}
+            cx={120}
+            cy={140}
+            innerRadius={30}
+            outerRadius={60}
+            fill='#F65329'
+            label
+          />
+          {/* <Tooltip /> */}
+        </PieChart>
+    </div>
+  </>
   );
 }

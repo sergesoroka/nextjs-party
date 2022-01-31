@@ -1,7 +1,5 @@
 import { useState } from 'react';
 import styles from './Table.module.css';
-import { dataSlugi } from '../data/slugi_program';
-import { partyProgram } from '../data/party_program';
 import {
   CheckOutlined,
   CloseOutlined,
@@ -13,17 +11,17 @@ import FiltersProgress from './FiltersProgress';
 import SelectParty from './SelectParty';
 import CheckBox from './CheckBox';
 
-export default function Table() {
+export default function Table( {data} ) {
   const [progress, setProgress] = useState('all');
   const [category, setCategory] = useState('all');
   const [filtered, setFiltered] = useState([]);
 
-  const filteredData = dataSlugi.filter(note => {
+  const filteredData = data.filter(note => {
     return filtered.includes(note.tag);
   });
 
   const handleFilters = (filters, category) => setFiltered([...filters]);
-  const renderItems = filtered.length === 0 ? dataSlugi : filteredData;
+  const renderItems = filtered.length === 0 ? data : filteredData;
 
   const renderedData = renderItems.map(item => {
     if (progress === 'all') {
