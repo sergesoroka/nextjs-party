@@ -51,10 +51,21 @@
 }
 
 .title {
-  margin: 0;
+  margin: 2rem 0 0 0;
   line-height: 1.15;
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
+  font-size: 2.8rem;
+  text-transform: uppercase;
+  letter-spacing: .12rem;
+  border-bottom: 1px solid #ccc;
+  font-weight: 100;
+
+}
+
+.subtitle {
+  margin: 0.4rem 0 3rem 0;
+  font-weight: 200;
+  font-size: 1rem;
+
 }
 
 .title,
@@ -119,7 +130,6 @@
   
   background-color: #30201C;
   flex-wrap: wrap;
-  height: 120px;
   padding: .5rem 2rem;
   color: #ccc;
   

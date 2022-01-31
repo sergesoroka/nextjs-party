@@ -7,7 +7,8 @@ export default function Header() {
 
   return (
     <div className={styles.header}>
-      <h1 className={styles.title}>Програми та обіцянки політичних партій</h1>
+      <h1 className={styles.title}>Партійні справи</h1>
+      <h2 className={styles.subtitle}>Як політичні партії виконують власні програми</h2>
     <div>
     <Link href="/">
           <button className={router.pathname === '/' ? styles.linkMenuActive : styles.linkMenu} >Home</button>
