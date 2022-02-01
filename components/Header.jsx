@@ -26,9 +26,9 @@ export default function Header() {
         : 
         <h2 className={styles.subtitleParty}>Як «{partyName}» виконує свої передвиборчі обіцянки</h2> }
     <div>
-    {/* <Link href="/">
-          <button className={router.pathname === '/' ? styles.linkMenuActive : styles.linkMenu} >Home</button>
-      </Link> */}
+    <Link href="/">
+          <button className={router.pathname === '/' ? styles.linkMenuActive : styles.linkMenu} >Всі партії</button>
+      </Link>
       <Link href="/slugi">
           <button className={router.pathname === '/slugi' ? styles.linkMenuActive : styles.linkMenu} >Слуга народу</button>
       </Link>
