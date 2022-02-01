@@ -1,18 +1,34 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import Vlada from '../icons/icons8-parliament.svg';
+import Logo from '../icons/logo.svg'
 import styles from '../styles/Home.module.css';
 
 export default function Header() {
   const router = useRouter()
-
+  const partyName = router.pathname === '/slugi' && 'Слуга народу' ||
+  router.pathname === '/es' && 'Європейська Солідарність' ||
+  router.pathname === '/batkivshina' && 'Батьківщина' ||
+  router.pathname === '/ob' && 'ОБЗЖ' ||
+  router.pathname === '/golos' && 'Голос' 
+  
   return (
     <div className={styles.header}>
-      <h1 className={styles.title}>Партійні справи</h1>
-      <h2 className={styles.subtitle}>Як політичні партії виконують власні програми</h2>
-    <div>
-    <Link href="/">
-          <button className={router.pathname === '/' ? styles.linkMenuActive : styles.linkMenu} >Home</button>
+    <Link href="/"><Logo style={{fill: '#ccc', marginTop: '1rem', cursor: 'pointer'}}/></Link>
+    {router.pathname === '/' ? 
+    <>
+      <Link href="/">
+        <h1 className={styles.title}>Партійні справи</h1>
       </Link>
+        <h2 className={styles.subtitle}>Як політичні партії виконують власні програми</h2>
+        <p className={styles.discription}>«Вокс» уважно прочитав програми найбільших політичних партій України, та перевірив, як вони виконують свої обіцянки</p>
+        </>
+        : 
+        <h2 className={styles.subtitleParty}>Як «{partyName}» виконує свої передвиборчі обіцянки</h2> }
+    <div>
+    {/* <Link href="/">
+          <button className={router.pathname === '/' ? styles.linkMenuActive : styles.linkMenu} >Home</button>
+      </Link> */}
       <Link href="/slugi">
           <button className={router.pathname === '/slugi' ? styles.linkMenuActive : styles.linkMenu} >Слуга народу</button>
       </Link>

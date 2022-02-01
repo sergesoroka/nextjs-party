@@ -25,7 +25,7 @@ export default function TableRow({item, category}) {
             item.in_progress && <InProgressIcon />
             }
           </td>
-          <td>{item.tag}</td>
+          <td className={styles.catMobile}>{item.tag}</td>
           <td><span className={styles.mobileHeadings}>Пріоритети:&nbsp;</span>{item.priority}</td>
           <td><span className={styles.mobileHeadings}>Що&nbsp;зробили&nbsp;</span>{item.what_done}</td>
           <td><span className={styles.mobileHeadings}>В&nbsp;цілому&nbsp;</span>{item.in_whole}</td>

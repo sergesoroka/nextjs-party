@@ -51,21 +51,32 @@
 }
 
 .title {
-  margin: 2rem 0 0 0;
+  margin: 1rem 0 0 0;
   line-height: 1.15;
   font-size: 2.8rem;
   text-transform: uppercase;
   letter-spacing: .12rem;
   border-bottom: 1px solid #ccc;
   font-weight: 100;
-
+  cursor: pointer;
 }
 
 .subtitle {
-  margin: 0.4rem 0 3rem 0;
-  font-weight: 200;
+  margin: 0.4rem 0 1rem 0;
+  font-weight: 400;
   font-size: 1rem;
 
+}
+.discription {
+  font-weight: 200;
+  font-size: 1rem;
+  width: 50%;
+  line-height: 1.6rem;
+}
+.subtitleParty {
+  margin: 1rem 0 3rem 0;
+  font-weight: 200;
+  font-size: 1.4rem;
 }
 
 .title,
@@ -136,7 +147,7 @@
 }
 
 .linkMenu, .linkMenuActive {
-  margin: 0 12px;
+  margin: 6px 12px 12px 0;
   background: #31201c;
   padding: 8px 24px;
   border: 1px solid #ccc;
@@ -178,5 +189,8 @@
   .grid {
     width: 100%;
     flex-direction: column;
+  }
+  .discription {
+    width: 100%
   }
 }

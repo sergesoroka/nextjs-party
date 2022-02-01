@@ -94,6 +94,17 @@
     .selectContainer {
         margin-left: 10px;
     }
+    .categoryWrapper {
+        justify-content: start !important;
+    }
+
+     .categoryName {
+        display: none  !important;
+    }
+}
+
+.catMobile {
+    font-weight: 600;
 }
 .btnGroup {
     border-bottom: 1px solid #d9d9d938;

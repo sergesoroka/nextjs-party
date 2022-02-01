@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import Table from '../components/Table';
 import PieChart from '../components/PieChart';
 import BarChartComp from '../components/BarChartComp';
+
 import { dataSlugi } from '../data/slugi_program';
 import { partyProgram } from '../data/party_program';
 import styles from '../styles/Home.module.css';
@@ -21,6 +22,7 @@ export default function Home() {
           <link rel='icon' href='/favicon.ico' />
         </Head>
         <BarChartComp />
+        
         {/* <div style={{display: 'flex', marginTop: '60px', justifyContent: 'center'}}>
           <PieChart data={partyProgram} title={'Слуга народу'}/>
           <PieChart data={partyProgram} title={'Європейська Солідарність'}/>

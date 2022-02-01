@@ -1,4 +1,4 @@
-import "./styles.css";
+
 import React from "react";
 import {
   BarChart,
@@ -7,74 +7,60 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend
+  Legend,
+  ResponsiveContainer
 } from "recharts";
 
 const data = [
   {
-    name: "Page A",
-    uv: 4000,
-    pv: 2400,
-    amt: 2400
+    name: "Слуга народу",
+    uv: 100,
+    done: 47.3,
+    not_done: 20.3,
+    in_progress: 32.4
   },
   {
-    name: "Page B",
-    uv: 3000,
-    pv: 1398,
-    amt: 2210
+    name: "ЄС",
+    uv: 100,
+    done: 37.3,
+    not_done: 40.3,
+    in_progress: 32.4
   },
   {
-    name: "Page C",
-    uv: 2000,
-    pv: 9800,
-    amt: 2290
+    name: "Батьківщина",
+    uv: 100,
+    done: 17.3,
+    not_done: 50.3,
+    in_progress: 42.4
+  },
+
+  {
+    name: "ОБЗЖ",
+    uv: 100,
+    done: 37.3,
+    not_done: 40.3,
+    in_progress: 32.4
   },
   {
-    name: "Page D",
-    uv: 2780,
-    pv: 3908,
-    amt: 2000
-  },
-  {
-    name: "Page E",
-    uv: 1890,
-    pv: 4800,
-    amt: 2181
-  },
-  {
-    name: "Page F",
-    uv: 2390,
-    pv: 3800,
-    amt: 2500
-  },
-  {
-    name: "Page G",
-    uv: 3490,
-    pv: 4300,
-    amt: 2100
+    name: "Голос",
+    uv: 100,
+    done: 47.3,
+    not_done: 20.3,
+    in_progress: 32.4
   }
 ];
 
-export default function BarChartComponent() {
+export default function BarChart() {
   return (
-    <BarChart
-      width={500}
-      height={300}
-      data={data}
-      margin={{
-        top: 20,
-        right: 30,
-        left: 20,
-        bottom: 5
-      }}
-    >
-      <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="name" />
-      <YAxis />
-      <Tooltip />
-      <Legend />
-      <Bar dataKey="pv" stackId="a" fill="#8884d8" />
-      <Bar dataKey="uv" stackId="a" fill="#82ca9d" />
+    <BarChart data={data} layout="vertical">
+        <XAxis type="number"  />
+        <YAxis dataKey="name" reversed type="category" />
+        <Tooltip />
+        <Legend />
+        <Bar legendType="done" dataKey="1" fill="#ff6f31" />
+        <Bar legendType="not_done" dataKey="2" fill="#ff9f02" />
+        <Bar legendType="in_progress" dataKey="3" fill="#ffcf02" />
+        
     </BarChart>
   );
 }
