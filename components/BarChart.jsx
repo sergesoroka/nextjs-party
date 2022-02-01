@@ -50,7 +50,7 @@ const data = [
   }
 ];
 
-export default function BarChart() {
+export default function BarChartSample() {
   return (
     <BarChart data={data} layout="vertical">
         <XAxis type="number"  />
