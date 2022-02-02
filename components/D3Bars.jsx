@@ -37,15 +37,16 @@ const partyProgress = [
 export default function D3Bars() {
   const [data] = useState(partyProgress)
   const svgRef = useRef()
-
   useEffect(() => {
+
+  const widthCal = window.innerWidth > 360 ? 600 : 360;
       // set the dimensions and margins of the graph
-var margin = {top: 20, right: 30, bottom: 40, left: 120},
-    width = 800 - margin.left - margin.right,
+const margin = {top: 20, right: 30, bottom: 40, left: 120},
+    width = widthCal - margin.left - margin.right,
     height = 400 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
-var svg = d3.select(svgRef.current)
+const svg = d3.select(svgRef.current)
   .append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
@@ -55,7 +56,7 @@ var svg = d3.select(svgRef.current)
 
 
   // Add X axis
-  var x = d3.scaleLinear()
+  const x = d3.scaleLinear()
     .domain([0, 100])
     .range([ 0, width]);
 
@@ -68,7 +69,7 @@ var svg = d3.select(svgRef.current)
 
 
   // Y axis
-  var y = d3.scaleBand()
+  const y = d3.scaleBand()
     .range([ 0, height ])
     .domain(data.map(function(d) { return d.name; }))
     .padding(.1);
@@ -78,7 +79,7 @@ var svg = d3.select(svgRef.current)
     .attr("class", "axisLeft")
     .attr("font-size","14")
     .attr('color', '#ccc')
-    .attr('opacity', 0.7);
+    
 
   //Bars
   svg.selectAll("myRect")
@@ -120,5 +121,5 @@ var svg = d3.select(svgRef.current)
 
   }, [data])
 
-  return <div><svg ref={svgRef} style={{height: '400px', width: '100%'}}></svg></div>;
+  return <div ref={svgRef}></div>;
 }

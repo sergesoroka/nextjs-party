@@ -14,7 +14,7 @@ export default function Header() {
   
   return (
     <div className={styles.header}>
-    <Link href="/"><Logo style={{fill: '#ccc', marginTop: '1rem', cursor: 'pointer'}}/></Link>
+    <Link href="https://voxukraine.org/"><Logo style={{fill: '#ccc', marginTop: '1rem', cursor: 'pointer'}}/></Link>
     {router.pathname === '/' ? 
     <>
       <Link href="/">
@@ -26,9 +26,10 @@ export default function Header() {
         : 
         <h2 className={styles.subtitleParty}>Як «{partyName}» виконує свої передвиборчі обіцянки</h2> }
     <div>
-    <Link href="/">
+    {router.pathname !== '/' ? 
+      <Link href="/">
           <button className={router.pathname === '/' ? styles.linkMenuActive : styles.linkMenu} >Всі партії</button>
-      </Link>
+      </Link> : null }
       <Link href="/slugi">
           <button className={router.pathname === '/slugi' ? styles.linkMenuActive : styles.linkMenu} >Слуга народу</button>
       </Link>
