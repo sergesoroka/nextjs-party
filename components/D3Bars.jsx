@@ -39,8 +39,8 @@ export default function D3Bars() {
   const svgRef = useRef()
   useEffect(() => {
 
-  const widthCal = window.innerWidth > 360 ? 600 : 360;
-      // set the dimensions and margins of the graph
+  const widthCal = window.innerWidth > 590 ? 600 : 360;
+ console.log(widthCal)
 const margin = {top: 20, right: 30, bottom: 40, left: 120},
     width = widthCal - margin.left - margin.right,
     height = 400 - margin.top - margin.bottom;
