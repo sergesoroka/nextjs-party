@@ -26,9 +26,9 @@ const data = [
   {
     name: "Батьківщина",
     uv: 100,
-    done: 17.3,
-    not_done: 50.3,
-    in_progress: 42.4
+    done: 17,
+    not_done: 50,
+    in_progress: 22
   },
 
   {
@@ -63,8 +63,8 @@ export default function VerticalChart() {
     >
 
       <XAxis hide='true' type="number" domain={['0', '100']} />
-      <YAxis dataKey="name" type="category" scale="band" />
-      <Tooltip />
+      <YAxis dataKey="name" type="category"  />
+      {/* <Tooltip /> */}
       <Bar dataKey="done" barSize={10}  fill="#009f08" fillOpacity= '0.8'/>
       <Bar dataKey="not_done" barSize={10} fill="#ff4716"   fillOpacity= '0.8'/>
       <Bar dataKey="in_progress" barSize={10}  fill="#ffd500"  fillOpacity= '0.8' />

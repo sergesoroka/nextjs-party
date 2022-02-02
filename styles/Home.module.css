@@ -182,7 +182,10 @@
     font-size: 0.95rem
 }
 
-
+.axisLeft text {
+  color: #ccc;
+  font-size: 12px;
+}
 
 
 @media (max-width: 600px) {
