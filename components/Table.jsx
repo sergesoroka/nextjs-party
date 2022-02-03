@@ -44,7 +44,7 @@ export default function Table( {data} ) {
       {/* <SelectParty /> */}
       <ScrollUpButton 
       AnimationDuration={500}
-      style={{fill: '#4a4a4a', border: 'none', outline: 'none', width: '30px'}}/>
+      style={{fill: '#4a4a4a', border: 'none', outline: 'none', width: '30px', height: '30px'}}/>
       <FiltersProgress progress={progress} setProgress={setProgress} />
       <CheckBox handleFilters={filters => handleFilters(filters, 'category')} />
 
