@@ -187,7 +187,9 @@
   font-size: 12px;
 }
 
-
+.acronim {
+  display: none;
+}
 @media (max-width: 600px) {
   .grid {
     width: 100%;
@@ -196,14 +198,20 @@
   .discription {
     width: 100%
   }
+  .subtitleParty {
+    margin: 1rem 0 1rem;
+  }
   .linkMenu, .linkMenuActive {
     margin: 6px 12px 12px 0;
-    background: #31201c;
+   
     padding: 4px 14px;
-    border: 1px solid #ccc;
-    border-radius: 24px;
-    color: #ccc;
-    font-size: .8rem;
-    cursor: pointer;
+    
+    
+  }
+  .acronim {
+    display: inherit;
+  }
+  .fullname {
+    display: none;
   }
 }

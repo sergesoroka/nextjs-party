@@ -34,7 +34,10 @@ export default function Header() {
           <button className={router.pathname === '/slugi' ? styles.linkMenuActive : styles.linkMenu} >Слуга народу</button>
       </Link>
       <Link href="/es">
-          <button className={router.pathname === '/es' ? styles.linkMenuActive : styles.linkMenu} >Європейська Солідарність</button>
+          <button className={router.pathname === '/es' ? styles.linkMenuActive : styles.linkMenu} >
+          
+          <span className={styles.acronim}>ЄС</span>
+          <span className={styles.fullname}>Європейська Солідарність</span></button>
       </Link>
       <Link href="/batkivshina">
           <button className={router.pathname === '/batkivshina' ? styles.linkMenuActive : styles.linkMenu} >Батьківщина</button>
