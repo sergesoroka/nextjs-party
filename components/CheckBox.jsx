@@ -3,7 +3,7 @@ import Vlada from '../icons/icons8-parliament.svg';
 import Globe from '../icons/icons8-globe.svg';
 import Corruption from '../icons/icons8-bribery.svg';
 import Economy from '../icons/icons8-account.svg';
-import Business from '../icons/icons8-growing-money.svg';
+import Business from '../icons/icons8-money-circulation.svg';
 import Defense from '../icons/icons8-defense.svg';
 import Gumanism from '../icons/icons8-save-the-children.svg';
 import Safeness from '../icons/icons8-child-safe-zone.svg';
