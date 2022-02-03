@@ -5,32 +5,7 @@ const partyProgress = [
   {
     name: "Слуга народу",
     done: 47.3,
-    not_done: 30.3,
-    in_progress: 32.4
-  },
-  {
-    name: "ЄС",
-    done: 97.3,
-    not_done: 10.3,
-    in_progress: 32.4
-  },
-  {
-    name: "Батьківщина",
-    done: 17.3,
-    not_done: 50.3,
-    in_progress: 42.4
-  },
-
-  {
-    name: "ОБЗЖ",
-    done: 37.3,
-    not_done: 40.3,
-    in_progress: 32.4
-  },
-  {
-    name: "Голос",
-    done: 47.3,
-    not_done: 22.3,
+    not_done: 60.3,
     in_progress: 32.4
   }
 ];
@@ -41,9 +16,9 @@ export default function D3Bars() {
 
   const widthCal = window.innerWidth > 590 ? 600 : 360;
  
-  const margin = {top: 20, right: 30, bottom: 40, left: 120},
+  const margin = {top: 0, right: 30, bottom: 40, left: 40},
     width = widthCal - margin.left - margin.right,
-    height = 400 - margin.top - margin.bottom;
+    height = 100 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
 const svg = d3.select(svgRef.current)
@@ -71,7 +46,7 @@ const svg = d3.select(svgRef.current)
   // Y axis
   const y = d3.scaleBand()
     .range([ 0, height ])
-    .domain(data.map(function(d) { return d.name; }))
+    // .domain(data.map(function(d) { return d.name; }))
     .padding(.1);
     
   svg.append("g")
