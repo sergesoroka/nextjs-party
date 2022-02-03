@@ -9,6 +9,7 @@ import {
 import TableRow from './TableRow';
 import FiltersProgress from './FiltersProgress';
 import SelectParty from './SelectParty';
+import {CircleArrow as ScrollUpButton} from "react-scroll-up-button";
 import CheckBox from './CheckBox';
 
 export default function Table( {data} ) {
@@ -41,6 +42,7 @@ export default function Table( {data} ) {
   return (
     <>
       {/* <SelectParty /> */}
+      <ScrollUpButton style={{fill: 'rgb(255 71 21)', border: '2px solid rgb(255 71 21)'}}/>
       <FiltersProgress progress={progress} setProgress={setProgress} />
       <CheckBox handleFilters={filters => handleFilters(filters, 'category')} />
 
