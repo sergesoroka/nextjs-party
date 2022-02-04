@@ -55,7 +55,7 @@ export default function Table( {data} ) {
             <th>&nbsp;</th>
             <th>Пріоритети</th>
             <th>Що&nbsp;зробили</th>
-            <th>Реалізація</th>
+            <th>Реализація</th>
           </tr>
         </thead>
         <tbody>{renderedData}</tbody>
