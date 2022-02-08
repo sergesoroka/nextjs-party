@@ -14,7 +14,7 @@
 .table>tbody>tr td:first-child { border-top-left-radius: 4px; }
 .table>tbody>tr td:last-child { border-top-right-radius: 4px; }
 .table>tbody>tr td:first-child { border-bottom-left-radius: 4px; }
-.table>tbody>tr td:last-child { border-bottom-right-radius: 4px; width: 200px;}
+.table>tbody>tr td:last-child { border-bottom-right-radius: 4px; width: 220px;}
 
 .table>thead {
     line-height: 26px;
@@ -60,6 +60,27 @@
     display: none;
 }
 
+.ralitation {
+    font-size: .8rem;
+}
+.ralitationLowLink {
+    color: #ff4716;
+    text-decoration: underline;
+}
+.ralitationCommentLink {
+    text-decoration: underline;
+}
+
+.ralitationStatus {
+    text-transform: uppercase;
+    font-size: .7rem;
+    background: #e5e5e5;
+    padding: 2px 4px;
+    border-radius: 4px;
+    width: fit-content;
+    margin-top: 4px;
+    line-height: .9rem;
+}
 
 @media screen and (max-width: 600px) {
     .btnGroup {
