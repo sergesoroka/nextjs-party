@@ -5,7 +5,7 @@ export default function RealizationStatus({ item }) {
   return (
     <>
       <span className={styles.mobileHeadings}>Реализація:</span>
-      <div>Прінято закон</div>
+      <div style={{ marginTop: '8px' }}>{item.title}</div>
       <>
         <span>
           <Link href={item.ih_link1} passHref={true}>
@@ -24,6 +24,7 @@ export default function RealizationStatus({ item }) {
       <>
         {item.in_whole_2 && (
           <div>
+            <div style={{ marginTop: '8px' }}>{item.title1 && item.title1}</div>
             <span>
               <Link href={item.ih_link2} passHref={true}>
                 <a className={styles.ralitationLowLink}>{item.in_whole_2}</a>
@@ -43,6 +44,7 @@ export default function RealizationStatus({ item }) {
       <>
         {item.in_whole_3 && (
           <div>
+            <div style={{ marginTop: '8px' }}>{item.title5 && item.title5}</div>
             <span>
               <Link href={item.ih_link3} passHref={true}>
                 <a className={styles.ralitationLowLink}>{item.in_whole_3}</a>
