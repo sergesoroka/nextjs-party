@@ -51,6 +51,36 @@ export default function RealizationStatus({ item }) {
           mark={item.basis_mark}
         />
       )}
+
+      {item.basis1 && (
+        <RealizationStatusItem
+          title={item.title_b}
+          link={item.basis_link1}
+          in_whole={item.basis1}
+          comment={item.basis_comment1}
+          mark={item.basis_mark1}
+        />
+      )}
+
+      {item.basis2 && (
+        <RealizationStatusItem
+          title={item.title_b}
+          link={item.basis_link2}
+          in_whole={item.basis2}
+          comment={item.basis_comment2}
+          mark={item.basis_mark2}
+        />
+      )}
+
+      {item.registered && (
+        <RealizationStatusItem
+          title={item.title_r}
+          link={item.r_link}
+          in_whole={item.registered}
+          comment={item.r_comment}
+          mark={item.r_mark}
+        />
+      )}
     </>
   );
 }
