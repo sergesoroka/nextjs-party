@@ -36,7 +36,7 @@ export default function TableRow({ item, category }) {
         {item.what_done}
       </td>
       <td className={styles.ralitation}>
-        {item.in_whole && <RealizationStatus item={item} />}
+        <RealizationStatus item={item} />
       </td>
     </tr>
   );
