@@ -6,15 +6,16 @@ export default function RealizationStatus({ item }) {
     <>
       <span className={styles.mobileHeadings}>Реализація:</span>
 
-      {item.in_whole && (
-        <RealizationStatusItem
-          title={item.title_ih}
-          link={item.ih_link}
-          in_whole={item.in_whole}
-          comment={item.ih_comment}
-          mark={item.ih_mark}
-        />
-      )}
+      {item.in_whole ||
+        (item.title_ih && (
+          <RealizationStatusItem
+            title={item.title_ih}
+            link={item.ih_link}
+            in_whole={item.in_whole}
+            comment={item.ih_comment}
+            mark={item.ih_mark}
+          />
+        ))}
       {item.in_whole1 && (
         <RealizationStatusItem
           title={item.title_ih1}
