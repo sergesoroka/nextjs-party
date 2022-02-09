@@ -1,13 +1,14 @@
 import React, { useState, useRef, useEffect } from 'react';
 import * as d3 from 'd3';
 
-export default function D3Bars({ done, not_done, in_progress }) {
+export default function D3Bars({ done, not_done, in_progress, all }) {
   const partyProgress = [
     {
       name: 'Слуга народу',
       done,
       not_done,
-      in_progress
+      in_progress,
+      all
     }
   ];
   const [data] = useState(partyProgress);
@@ -15,7 +16,7 @@ export default function D3Bars({ done, not_done, in_progress }) {
   useEffect(() => {
     const widthCal = window.innerWidth > 590 ? 600 : 360;
 
-    const margin = { top: 0, right: 30, bottom: 40, left: 10 },
+    const margin = { top: 0, right: 30, bottom: 40, left: 40 },
       width = widthCal - margin.left - margin.right,
       height = 100 - margin.top - margin.bottom;
 
@@ -29,7 +30,7 @@ export default function D3Bars({ done, not_done, in_progress }) {
       .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
 
     // Add X axis
-    const x = d3.scaleLinear().domain([0, 100]).range([0, width]);
+    const x = d3.scaleLinear().domain([0, all]).range([0, width]);
 
     svg
       .append('g')
@@ -45,17 +46,18 @@ export default function D3Bars({ done, not_done, in_progress }) {
       // .domain(data.map(function(d) { return d.name; }))
       .padding(0.1);
 
-    svg
-      .append('g')
-      .call(d3.axisLeft(y))
-      .attr('class', 'axisLeft')
-      .attr('font-size', '14')
-      .attr('color', '#ccc')
-      .attr('transform', 'translate(-4,0)');
+    // svg
+    //   .append('g')
+    //   .call(d3.axisLeft(y))
+    //   .attr('class', 'axisLeft')
+    //   .attr('font-size', '14')
+    //   .attr('color', '#ccc')
+    //   .attr('transform', 'translate(-4, 0)');
 
     // var bar = svg.selectAll('g').data(data).enter().append('g');
 
     //Bars
+    // bar — done
     svg
       .selectAll('myRect')
       .data(data)
@@ -68,78 +70,90 @@ export default function D3Bars({ done, not_done, in_progress }) {
       .attr('width', function (d) {
         return x(d.done);
       })
-      .attr('height', y.bandwidth() / 3)
+      .attr('height', y.bandwidth() )
       .attr('fill', '#009f08')
       .attr('opacity', 0.7)
       .text(function (d) {
         return d.done;
       });
+  // text — done
     svg
       .append('text')
       .data(data)
       .text(function (d) {
-        return d.done + '%';
+        return d.done;
       })
-      .attr('transform', 'translate(36, 14)')
-      .attr('x', d => (d.done * 10) / 2)
+      .attr('transform', 'translate(0, 34)')
+      .attr('x', d => x(d.done) - 34)
       .attr('fill', '#ccc')
-      .attr('font-size', '13px');
+      .attr('font-size', '16px');
 
+
+// bar — not_done
     svg
       .selectAll('myRect')
       .data(data)
       .enter()
       .append('rect')
-      .attr('x', x(0))
+      .attr('x', function (d) {
+        return x(d.done);
+      })
       .attr('y', function (d) {
         return y(d.name);
       })
       .attr('width', function (d) {
         return x(d.not_done);
       })
-      .attr('height', y.bandwidth() / 3)
+      .attr('height', y.bandwidth() )
       .attr('fill', '#ff4716')
-      .attr('opacity', 0.8)
-      .attr('transform', 'translate(0,' + 20 + ')');
+      .attr('opacity', 0.7);
+      // .attr('transform', 'translate(0,' + 20 + ')');
 
+// text — not_done
     svg
       .append('text')
       .data(data)
       .text(function (d) {
-        return d.not_done + '%';
+        return d.not_done;
       })
-      .attr('transform', 'translate(36, 34)')
-      .attr('x', d => (d.not_done * 10) / 2)
+      .attr('transform', 'translate(0, 34)')
+      .attr('x', d => x(d.done) + x(d.not_done) - 34)
       .attr('fill', '#ccc')
-      .attr('font-size', '13px');
+      .attr('font-size', '16px');
 
+
+// bar — in_progress
     svg
       .selectAll('myRect')
       .data(data)
       .enter()
       .append('rect')
-      .attr('x', x(0))
+      .attr('x', function (d) {
+        return x(d.done) + x(d.not_done);
+      })
       .attr('y', function (d) {
         return y(d.name);
       })
       .attr('width', function (d) {
         return x(d.in_progress);
       })
-      .attr('height', y.bandwidth() / 3)
-      .attr('fill', '#ffd500')
-      .attr('opacity', 0.8)
-      .attr('transform', 'translate(0,' + 40 + ')');
+      .attr('height', y.bandwidth())
+      .attr('fill', '#ddb800')
+      .attr('opacity', 1);
 
+
+// text — in_progress
     svg
       .append('text')
       .data(data)
       .text(function (d) {
-        return d.in_progress + '%';
+        return d.in_progress;
       })
-      .attr('transform', 'translate(36, 54)')
-      .attr('x', d => (d.in_progress * 10) / 2)
+      .attr('transform', 'translate(0, 34)')
+      .attr('x', d => x(d.done) + x(d.not_done) + x(d.in_progress) - 34)
       .attr('fill', '#ccc')
-      .attr('font-size', '13px');
+      .attr('font-size', '16px')
+      .attr('text-anchor', 'middle');
   }, [data]);
 
   return <div ref={svgRef}></div>;
