@@ -9,7 +9,7 @@ export default function slugi() {
     <div className={styles.container}>
       <main className={styles.main}>
         <div className={styles.grid}>
-          <D3BarsPage done={26} not_done={17} in_progress={31} all={74} />
+          <D3BarsPage done={26} not_done={17} in_progress={31} all={74} party={'Батьківщина'}/>
           <Table data={slugiPromises} />
         </div>
       </main>

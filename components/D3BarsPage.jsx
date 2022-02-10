@@ -1,18 +1,21 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { useRouter } from 'next/router'
 import * as d3 from 'd3';
 
-export default function D3Bars({ done, not_done, in_progress, all }) {
+export default function D3Bars({ done, not_done, in_progress, all, party }) {
   const partyProgress = [
     {
       name: 'Слуга народу',
       done,
       not_done,
       in_progress,
-      all
+      all,
+      party
     }
   ];
   const [data] = useState(partyProgress);
   const svgRef = useRef();
+  const router = useRouter()
   useEffect(() => {
     const widthCal = window.innerWidth > 590 ? 600 : 360;
 
@@ -84,7 +87,7 @@ export default function D3Bars({ done, not_done, in_progress, all }) {
         return d.done;
       })
       .attr('transform', 'translate(0, 34)')
-      .attr('x', d => x(d.done) - 34)
+      .attr('x', d => x(d.done) - 24)
       .attr('fill', '#ccc')
       .attr('font-size', '16px');
 
@@ -117,7 +120,7 @@ export default function D3Bars({ done, not_done, in_progress, all }) {
         return d.not_done;
       })
       .attr('transform', 'translate(0, 34)')
-      .attr('x', d => x(d.done) + x(d.not_done) - 34)
+      .attr('x', d => x(d.done) + x(d.not_done) - 24)
       .attr('fill', '#ccc')
       .attr('font-size', '16px');
 
@@ -150,18 +153,20 @@ export default function D3Bars({ done, not_done, in_progress, all }) {
         return d.in_progress;
       })
       .attr('transform', 'translate(0, 34)')
-      .attr('x', d => x(d.done) + x(d.not_done) + x(d.in_progress) - 34)
+      .attr('x', d => x(d.done) + x(d.not_done) + x(d.in_progress) - 24)
       .attr('fill', '#30201C')
       .attr('font-size', '16px')
       .attr('text-anchor', 'middle');
   }, [data]);
 
   return (<>
+  {router.pathname === '/' ? <h4 style={ {color: '#ccc', marginLeft: '40px'}}>{party}</h4> : 
           <ul style={{display: 'flex'}}>
             <li style={ {color: '#009f08'}}>Виконано</li>
             <li style={ {color: '#ff4716', marginLeft: '40px'}}>Не виконано</li>
             <li style={ {color: '#ffd500', marginLeft: '40px'}}>В процесі</li>
             <li style={ {color: '#ccc', marginLeft: '40px'}}>Загалом: {all}</li>
           </ul>
+}
   <div ref={svgRef}></div></>);
 }
