@@ -17,20 +17,20 @@ const partyProgress = [
   {
     name: "Батьківщина",
     done: 30,
-    not_done: 50,
+    not_done: 20,
     in_progress: 10
   },
 
   {
     name: "ОБЗЖ",
-    done: 37,
-    not_done: 40,
+    done: 27,
+    not_done: 30,
     in_progress: 20
   },
   {
     name: "Голос",
     done: 35,
-    not_done: 40,
+    not_done: 20,
     in_progress: 10
   }
 ];
@@ -62,7 +62,7 @@ const svg = d3.select(svgRef.current)
 
   // Add X axis
   const x = d3.scaleLinear()
-    .domain([0, 100])
+    .domain([0, 80])
     .range([ 0, width]);
 
   svg.append("g")
