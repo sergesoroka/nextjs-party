@@ -160,7 +160,8 @@ export default function D3Bars({ done, not_done, in_progress, all, party }) {
   }, [data]);
 
   return (<>
-  {router.pathname === '/' ? <h4 style={ {color: '#ccc', marginLeft: '40px'}}>{party}</h4> : 
+  {router.pathname === '/' ? 
+    <h4 style={ {color: '#ccc', marginLeft: '40px'}}>{party} |<span  style={ {fontWeight: '200', fontSize: '13px'}}> Загалом обіцянок: {all}</span></h4> : 
           <ul style={{display: 'flex'}}>
             <li style={ {color: '#009f08'}}>Виконано</li>
             <li style={ {color: '#ff4716', marginLeft: '40px'}}>Не виконано</li>
