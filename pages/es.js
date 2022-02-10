@@ -9,7 +9,12 @@ export default function slugi() {
     <div className={styles.container}>
       <main className={styles.main}>
         <div className={styles.grid}>
-          <D3BarsPage done={35.1} not_done={23.0} in_progress={41.9} />
+        <ul style={{display: 'flex'}}>
+            <li style={ {color: '#009f08'}}>Виконано</li>
+            <li style={ {color: '#ff4716', marginLeft: '40px'}}>Не виконано</li>
+            <li style={ {color: '#ffd500', marginLeft: '40px'}}>В процесі</li>
+          </ul>
+          <D3BarsPage done={26} not_done={17} in_progress={31} all={74} />
 
           <Table data={esPromises} />
         </div>

@@ -151,7 +151,7 @@ export default function D3Bars({ done, not_done, in_progress, all }) {
       })
       .attr('transform', 'translate(0, 34)')
       .attr('x', d => x(d.done) + x(d.not_done) + x(d.in_progress) - 34)
-      .attr('fill', '#ccc')
+      .attr('fill', '#30201C')
       .attr('font-size', '16px')
       .attr('text-anchor', 'middle');
   }, [data]);
