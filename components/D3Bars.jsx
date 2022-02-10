@@ -6,7 +6,7 @@ const partyProgress = [
     name: "Слуга народу",
     done: 17,
     not_done: 20,
-    in_progress: 37
+    in_progress: 21
   },
   {
     name: "ЄС",
