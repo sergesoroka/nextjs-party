@@ -156,5 +156,12 @@ export default function D3Bars({ done, not_done, in_progress, all }) {
       .attr('text-anchor', 'middle');
   }, [data]);
 
-  return <div ref={svgRef}></div>;
+  return (<>
+          <ul style={{display: 'flex'}}>
+            <li style={ {color: '#009f08'}}>Виконано</li>
+            <li style={ {color: '#ff4716', marginLeft: '40px'}}>Не виконано</li>
+            <li style={ {color: '#ffd500', marginLeft: '40px'}}>В процесі</li>
+            <li style={ {color: '#ccc', marginLeft: '40px'}}>Загалом: {all}</li>
+          </ul>
+  <div ref={svgRef}></div></>);
 }

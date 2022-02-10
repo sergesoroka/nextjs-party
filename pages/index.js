@@ -29,6 +29,7 @@ export default function Home() {
           <li style={ {color: '#009f08'}}>Виконано</li>
           <li style={ {color: '#ff4716', marginLeft: '40px'}}>Не виконано</li>
           <li style={ {color: '#ffd500', marginLeft: '40px'}}>В процесі</li>
+          
         </ul>
       </div>
     </>
