@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import D3Bars from '../components/D3Bars';
-import D3BarsPage from '../components/D3BarsPage';
+import D3BarsMainPage from '../components/D3BarsMainPage'
+
+
 import styles from '../styles/Home.module.css';
 
 
@@ -16,16 +18,9 @@ export default function Home() {
           <link rel='icon' href='/favicon.ico' />
         </Head>
         <div>
-        <ul style={{display: 'flex'}}>
-            <li style={ {color: '#009f08'}}>Виконано</li>
-            <li style={ {color: '#ff4716', marginLeft: '40px'}}>Не виконано</li>
-            <li style={ {color: '#ffd500', marginLeft: '40px'}}>В процесі</li>
-          </ul>
-        <D3BarsPage done={26} not_done={7} in_progress={31} all={64} party={'Слуга народу'}/>
-        <D3BarsPage done={16} not_done={17} in_progress={21} all={54} party={'ЄС'}/>
-        <D3BarsPage done={26} not_done={17} in_progress={31} all={74} party={'Батьківщина'}/>
-        <D3BarsPage done={26} not_done={7} in_progress={31} all={64} party={'ОБЖД'}/>
-        <D3BarsPage done={26} not_done={17} in_progress={31} all={74} party={'Голос'} />
+        
+        
+        <D3Bars />
         </div>
     
         {/* <ul style={{display: 'flex'}}>

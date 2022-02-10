@@ -4,34 +4,34 @@ import * as d3 from 'd3';
 const partyProgress = [
   {
     name: "Слуга народу",
-    done: 47.3,
-    not_done: 30.3,
-    in_progress: 32.4
+    done: 17,
+    not_done: 20,
+    in_progress: 37
   },
   {
     name: "ЄС",
-    done: 97.3,
-    not_done: 10.3,
-    in_progress: 32.4
+    done: 26,
+    not_done: 17,
+    in_progress: 31
   },
   {
     name: "Батьківщина",
-    done: 17.3,
-    not_done: 50.3,
-    in_progress: 42.4
+    done: 30,
+    not_done: 50,
+    in_progress: 10
   },
 
   {
     name: "ОБЗЖ",
-    done: 37.3,
-    not_done: 40.3,
-    in_progress: 32.4
+    done: 37,
+    not_done: 40,
+    in_progress: 20
   },
   {
     name: "Голос",
-    done: 47.3,
-    not_done: 22.3,
-    in_progress: 32.4
+    done: 35,
+    not_done: 40,
+    in_progress: 10
   }
 ];
 export default function D3Bars() {
@@ -50,10 +50,15 @@ const svg = d3.select(svgRef.current)
   .append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
-  .append("g")
+    .append('g')
+    
     .attr("transform",
           "translate(" + margin.left + "," + margin.top + ")");
 
+   const bar =  svg.selectAll("g")
+          .data(data)
+          .enter()
+          .append("g");
 
   // Add X axis
   const x = d3.scaleLinear()
@@ -78,48 +83,79 @@ const svg = d3.select(svgRef.current)
     .call(d3.axisLeft(y))
     .attr("class", "axisLeft")
     .attr("font-size","14")
-    .attr('color', '#ccc')
-    
-
-  //Bars
-  svg.selectAll("myRect")
-    .data(data)
-    .enter()
-    .append("rect")
-    .attr("x", x(0) )
-    .attr("y", function(d) { return y(d.name); })
-    .attr("width", function(d) { return x(d.done); })
-    .attr("height", y.bandwidth() / 3)
-    .attr("fill", "#009f08")
-    .attr('opacity', 0.7)
+    .attr('color', '#ccc');
    
-
-    svg.selectAll("myRect")
-    .data(data)
-    .enter()
+   
+   
+  //Bars
+ bar
     .append("rect")
-    .attr("x", x(0) )
+    .attr("x", 0 )
+    .attr("y", d => y(d.name))
+    .attr("width", function(d) { return x(d.done); })
+    .attr("height", y.bandwidth() )
+    .attr("fill", "#009f08")
+    .attr('opacity', 0.7);
+
+  bar
+    .append('text')
+      .text(d => d.done)
+      .attr("dy", ".35em") //vertical align middle
+      .attr('transform', 'translate(0, 30)')
+      .attr('x', d => x(d.done) - 24)
+      .attr("y", d => y(d.name))
+      .attr('fill', '#ccc')
+      .attr('font-size', '16px');
+
+  
+  bar
+    .append("rect")
+    .attr("x", function (d) {
+      return x(d.done);
+    } )
     .attr("y", function(d) { return y(d.name); })
     .attr("width", function(d) { return x(d.not_done); })
-    .attr("height", y.bandwidth() / 3)
+    .attr("height", y.bandwidth() )
     .attr("fill", "#ff4716")
-    .attr('opacity', 0.8)
-    .attr("transform", "translate(0," + 20 + ")")
+    .attr('opacity', 0.7);
 
-    svg.selectAll("myRect")
-    .data(data)
-    .enter()
+   bar
+    .append('text')
+      .text(d => d.not_done)
+      .attr("dy", ".35em") //vertical align middle
+      .attr('transform', 'translate(0, 30)')
+      .attr('x', d => x(d.done) + x(d.not_done) - 24)
+      .attr("y", d => y(d.name))
+      .attr('fill', '#ccc')
+      .attr('font-size', '16px');
+
+  bar
     .append("rect")
-    .attr("x", x(0) )
+    .attr("x", function (d) {
+      return x(d.done) + x(d.not_done);
+    })
     .attr("y", function(d) { return y(d.name); })
     .attr("width", function(d) { return x(d.in_progress); })
-    .attr("height", y.bandwidth() / 3)
+    .attr("height", y.bandwidth() )
     .attr("fill", "#ffd500")
-    .attr('opacity', 0.8)
-    .attr("transform", "translate(0," + 40 + ")")
-    
-
+    .attr('opacity', 0.7);
+  bar
+    .append('text')
+      .text(d => d.in_progress)
+      .attr("dy", ".35em") //vertical align middle
+      .attr('transform', 'translate(0, 30)')
+      .attr('x', d => x(d.done) + x(d.not_done) + x(d.in_progress) - 24)
+      .attr("y", d => y(d.name))
+      .attr('fill', '#31201c')
+      .attr('font-size', '16px');
   }, [data])
 
-  return <div ref={svgRef}></div>;
+  return <>
+  <ul style={{display: 'flex'}}>
+            <li style={ {color: '#009f08'}}>Виконано</li>
+            <li style={ {color: '#ff4716', marginLeft: '40px'}}>Не виконано</li>
+            <li style={ {color: '#ffd500', marginLeft: '40px'}}>В процесі</li>
+            
+          </ul>
+  <div ref={svgRef}></div></>;
 }
