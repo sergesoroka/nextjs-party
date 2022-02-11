@@ -92,10 +92,13 @@ const svg = d3.select(svgRef.current)
     .append("rect")
     .attr("x", 0 )
     .attr("y", d => y(d.name))
-    .attr("width", function(d) { return x(d.done); })
+    .attr("width", 0)
     .attr("height", y.bandwidth() )
     .attr("fill", "#009f08")
-    .attr('opacity', 0.7);
+    .attr('opacity', 0.7)
+      .transition()
+      .duration(350)
+      .attr("width", d => x(d.done));
 
   bar
     .append('text')
@@ -105,7 +108,12 @@ const svg = d3.select(svgRef.current)
       .attr('x', d => x(d.done) - 24)
       .attr("y", d => y(d.name))
       .attr('fill', '#ccc')
-      .attr('font-size', '16px');
+      .attr('font-size', '16px')
+      .attr('opacity', 0)
+        .transition()
+        .duration(150)
+        .delay(1500)
+        .attr('opacity', 1);
 
   
   bar
@@ -114,10 +122,13 @@ const svg = d3.select(svgRef.current)
       return x(d.done);
     } )
     .attr("y", function(d) { return y(d.name); })
-    .attr("width", function(d) { return x(d.not_done); })
+    .attr("width", 0)
     .attr("height", y.bandwidth() )
     .attr("fill", "#ff4716")
-    .attr('opacity', 0.7);
+    .attr('opacity', 0.7)
+      .transition()
+      .duration(750)
+      .attr("width", d => x(d.not_done));
 
    bar
     .append('text')
@@ -127,7 +138,12 @@ const svg = d3.select(svgRef.current)
       .attr('x', d => x(d.done) + x(d.not_done) - 24)
       .attr("y", d => y(d.name))
       .attr('fill', '#ccc')
-      .attr('font-size', '16px');
+      .attr('font-size', '16px')
+      .attr('opacity', 0)
+        .transition()
+        .duration(150)
+        .delay(1600)
+        .attr('opacity', 1);
 
   bar
     .append("rect")
@@ -135,10 +151,14 @@ const svg = d3.select(svgRef.current)
       return x(d.done) + x(d.not_done);
     })
     .attr("y", function(d) { return y(d.name); })
-    .attr("width", function(d) { return x(d.in_progress); })
+    .attr("width", 0)
     .attr("height", y.bandwidth() )
     .attr("fill", "#ffd500")
-    .attr('opacity', 0.7);
+    .attr('opacity', 0.7)
+      .transition()
+      .duration(1200)
+      .attr("width", d => x(d.in_progress));
+
   bar
     .append('text')
       .text(d => d.in_progress)
@@ -147,7 +167,12 @@ const svg = d3.select(svgRef.current)
       .attr('x', d => x(d.done) + x(d.not_done) + x(d.in_progress) - 24)
       .attr("y", d => y(d.name))
       .attr('fill', '#31201c')
-      .attr('font-size', '16px');
+      .attr('font-size', '16px')
+      .attr('opacity', 0)
+        .transition()
+        .duration(150)
+        .delay(1700)
+        .attr('opacity', 1);
   }, [data])
 
   return <>

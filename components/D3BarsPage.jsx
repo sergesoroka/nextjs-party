@@ -70,15 +70,16 @@ export default function D3Bars({ done, not_done, in_progress, all, party }) {
       .attr('y', function (d) {
         return y(d.name);
       })
-      .attr('width', function (d) {
-        return x(d.done);
-      })
+      .attr('width', 0)
       .attr('height', y.bandwidth() )
       .attr('fill', '#009f08')
       .attr('opacity', 0.7)
       .text(function (d) {
         return d.done;
-      });
+      })
+      .transition()
+      .duration(350)
+      .attr("width", d => x(d.done));
   // text — done
     svg
       .append('text')
@@ -89,7 +90,12 @@ export default function D3Bars({ done, not_done, in_progress, all, party }) {
       .attr('transform', 'translate(0, 34)')
       .attr('x', d => x(d.done) - 24)
       .attr('fill', '#ccc')
-      .attr('font-size', '16px');
+      .attr('font-size', '16px')
+      .attr('opacity', 0)
+        .transition()
+        .duration(150)
+        .delay(1500)
+        .attr('opacity', 1);
 
 
 // bar — not_done
@@ -104,12 +110,13 @@ export default function D3Bars({ done, not_done, in_progress, all, party }) {
       .attr('y', function (d) {
         return y(d.name);
       })
-      .attr('width', function (d) {
-        return x(d.not_done);
-      })
+      .attr('width', 0)
       .attr('height', y.bandwidth() )
       .attr('fill', '#ff4716')
-      .attr('opacity', 0.7);
+      .attr('opacity', 0.7)
+      .transition()
+      .duration(750)
+      .attr("width", d => x(d.not_done));
       // .attr('transform', 'translate(0,' + 20 + ')');
 
 // text — not_done
@@ -122,7 +129,12 @@ export default function D3Bars({ done, not_done, in_progress, all, party }) {
       .attr('transform', 'translate(0, 34)')
       .attr('x', d => x(d.done) + x(d.not_done) - 24)
       .attr('fill', '#ccc')
-      .attr('font-size', '16px');
+      .attr('font-size', '16px')
+      .attr('opacity', 0)
+        .transition()
+        .duration(150)
+        .delay(1600)
+        .attr('opacity', 1);
 
 
 // bar — in_progress
@@ -137,12 +149,13 @@ export default function D3Bars({ done, not_done, in_progress, all, party }) {
       .attr('y', function (d) {
         return y(d.name);
       })
-      .attr('width', function (d) {
-        return x(d.in_progress);
-      })
+      .attr('width', 0)
       .attr('height', y.bandwidth())
       .attr('fill', '#ddb800')
-      .attr('opacity', 1);
+      .attr('opacity', 1)
+        .transition()
+        .duration(1200)
+        .attr("width", d => x(d.in_progress));
 
 
 // text — in_progress
@@ -156,7 +169,12 @@ export default function D3Bars({ done, not_done, in_progress, all, party }) {
       .attr('x', d => x(d.done) + x(d.not_done) + x(d.in_progress) - 24)
       .attr('fill', '#30201C')
       .attr('font-size', '16px')
-      .attr('text-anchor', 'middle');
+      .attr('text-anchor', 'middle')
+      .attr('opacity', 0)
+        .transition()
+        .duration(150)
+        .delay(1700)
+        .attr('opacity', 1);
   }, [data]);
 
   return (<>
