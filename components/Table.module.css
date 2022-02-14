@@ -152,20 +152,26 @@
     /* background-color: #F65329; */
     border-bottom: 4px solid #ccc;
 }
-
+.btnDone {
+    color: #009f08 !important;
+}
 .btnDoneActive {
     color: #009f08 !important;
     border-bottom: 4px solid #009f08  !important;
 }
 
 
-
+.btnNotDone {
+    color: #ff4716 !important;
+}
 .btnNotDoneActive {
     color: #ff4716 !important;
     border-bottom: 4px solid #ff4716 !important;
 }
 
-
+.btnInProgress {
+    color: #ffd500 !important;
+}
 
 .btnInProgressActive {
     color: #ffd500 !important;

@@ -1,8 +1,6 @@
 import Head from 'next/head';
 import D3Bars from '../components/D3Bars';
 import D3BarsMainPage from '../components/D3BarsMainPage'
-
-
 import styles from '../styles/Home.module.css';
 
 
@@ -17,18 +15,9 @@ export default function Home() {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link rel='icon' href='/favicon.ico' />
         </Head>
-        <div>
-        
-        
+        <div>     
         <D3Bars />
         </div>
-    
-        {/* <ul style={{display: 'flex'}}>
-          <li style={ {color: '#009f08'}}>Виконано</li>
-          <li style={ {color: '#ff4716', marginLeft: '40px'}}>Не виконано</li>
-          <li style={ {color: '#ffd500', marginLeft: '40px'}}>В процесі</li>
-          
-        </ul> */}
       </div>
     </>
   );

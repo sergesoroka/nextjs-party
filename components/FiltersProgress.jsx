@@ -20,7 +20,7 @@ export default function FiltersProgress({progress, setProgress}) {
           }
           onClick={() => setProgress('done')}
         >
-          <CheckOutlined style={progress === 'done' ? {color: '#00980F', fontSize: '16px', marginBottom: '6px'}: {color: '#ccc', fontSize: '16px', marginBottom: '6px'}}/>
+          <CheckOutlined style={progress === 'done' ? {color: '#00980F', fontSize: '16px', marginBottom: '6px'}: {color: '#009f08', fontSize: '16px', marginBottom: '6px'}}/>
           <span style={{display: 'inline-block', marginLeft: '8px'}}>Виконано</span>
           
         </button>
@@ -32,7 +32,7 @@ export default function FiltersProgress({progress, setProgress}) {
           }
           onClick={() => setProgress('not_done')}
         >
-          <CloseOutlined style={progress === 'not_done' ? {color: '#F65329', fontSize: '16px', marginBottom: '6px'}: {color: '#ccc', fontSize: '16px', marginBottom: '6px'}} />
+          <CloseOutlined style={progress === 'not_done' ? {color: '#F65329', fontSize: '16px', marginBottom: '6px'}: {color: '#ff4716', fontSize: '16px', marginBottom: '6px'}} />
           <span style={{display: 'inline-block', marginLeft: '8px'}}>Не виконано</span>
         </button>
         <button
@@ -43,7 +43,7 @@ export default function FiltersProgress({progress, setProgress}) {
           }
           onClick={() => setProgress('in_progress')}
         >
-          <ClockCircleOutlined style={progress === 'in_progress' ? {color: '#ffd500', fontSize: '16px', marginBottom: '6px'}: {color: '#ccc', fontSize: '16px', marginBottom: '6px'}} />
+          <ClockCircleOutlined style={progress === 'in_progress' ? {color: '#ffd500', fontSize: '16px', marginBottom: '6px'}: {color: '#ffd500', fontSize: '16px', marginBottom: '6px'}} />
           <span style={{display: 'inline-block', marginLeft: '8px'}}>В процесі</span>
         </button>
       </div>
