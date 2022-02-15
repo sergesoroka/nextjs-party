@@ -1,11 +1,8 @@
 import Head from 'next/head';
 import D3Bars from '../components/D3Bars';
-import D3BarsMainPage from '../components/D3BarsMainPage'
 import styles from '../styles/Home.module.css';
 
-
 export default function Home() {
-  
   return (
     <>
       <div className={styles.container}>

@@ -10,9 +10,9 @@ const partyProgress = [
   },
   {
     name: "ЄС",
-    done: 26,
-    not_done: 17,
-    in_progress: 31
+    done: 9,
+    not_done: 10,
+    in_progress: 8
   },
   {
     name: "Батьківщина",

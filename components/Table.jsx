@@ -1,14 +1,7 @@
 import { useState } from 'react';
 import styles from './Table.module.css';
-import {
-  CheckOutlined,
-  CloseOutlined,
-  ClockCircleOutlined,
-  UnorderedListOutlined
-} from '@ant-design/icons';
 import TableRow from './TableRow';
 import FiltersProgress from './FiltersProgress';
-import SelectParty from './SelectParty';
 import {CircleArrow as ScrollUpButton} from "react-scroll-up-button";
 import CheckBox from './CheckBox';
 
@@ -23,7 +16,7 @@ export default function Table( {data} ) {
 
   const handleFilters = (filters, category) => setFiltered([...filters]);
   const renderItems = filtered.length === 0 ? data : filteredData;
-
+  
   const renderedData = renderItems.map(item => {
     if (progress === 'all') {
       return <TableRow item={item} category={category} key={item.id} />;
