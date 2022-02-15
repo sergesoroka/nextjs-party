@@ -14,25 +14,25 @@ const partyProgress = [
     not_done: 10,
     in_progress: 8
   },
-  {
-    name: "Батьківщина",
-    done: 30,
-    not_done: 20,
-    in_progress: 10
-  },
+  // {
+  //   name: "Батьківщина",
+  //   done: 30,
+  //   not_done: 20,
+  //   in_progress: 10
+  // },
 
-  {
-    name: "ОБЗЖ",
-    done: 27,
-    not_done: 30,
-    in_progress: 20
-  },
-  {
-    name: "Голос",
-    done: 35,
-    not_done: 20,
-    in_progress: 10
-  }
+  // {
+  //   name: "ОБЗЖ",
+  //   done: 27,
+  //   not_done: 30,
+  //   in_progress: 20
+  // },
+  // {
+  //   name: "Голос",
+  //   done: 35,
+  //   not_done: 20,
+  //   in_progress: 10
+  // }
 ];
 export default function D3Bars() {
   const [data] = useState(partyProgress)
@@ -43,7 +43,7 @@ export default function D3Bars() {
  
   const margin = {top: 20, right: 30, bottom: 40, left: 120},
     width = widthCal - margin.left - margin.right,
-    height = 400 - margin.top - margin.bottom;
+    height = 200 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
 const svg = d3.select(svgRef.current)

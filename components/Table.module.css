@@ -91,7 +91,8 @@
         margin-bottom: 6px;
     }
     .btnGroup>button {
-        display: block;    
+        padding: 6px 7px !important;
+        font-size: 11px !important;
      }
 
      .tableRow>td {

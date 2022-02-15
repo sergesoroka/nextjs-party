@@ -29,6 +29,7 @@
   padding: 2rem 0;
   justify-content: center;
   align-items: center;
+  color: #ccc;
 }
 
 .footer a {
@@ -36,6 +37,7 @@
   justify-content: center;
   align-items: center;
   flex-grow: 1;
+  
 }
 
 .title a {
@@ -69,7 +71,7 @@
 .discription {
   font-weight: 200;
   font-size: 1rem;
-  width: 50%;
+  width: 70%;
   line-height: 1.6rem;
 }
 .subtitleParty {

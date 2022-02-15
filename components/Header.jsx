@@ -21,7 +21,7 @@ export default function Header() {
         <h1 className={styles.title}>Партійні справи</h1>
       </Link>
         <h2 className={styles.subtitle}>Як політичні партії виконують власні програми</h2>
-        <p className={styles.discription}>«Вокс» уважно прочитав програми найбільших політичних партій України, та перевірив, як вони виконують свої обіцянки</p>
+        <p className={styles.discription}>«Вокс» уважно прочитав передвиборчі програми найбільших політичних партій України, та перевірив, як вони виконують свої обіцянки</p>
         </>
         : 
         <h2 className={styles.subtitleParty}>Як «{partyName}» виконує свої передвиборчі обіцянки</h2> }
@@ -39,7 +39,7 @@ export default function Header() {
           <span className={styles.acronim}>ЄС</span>
           <span className={styles.fullname}>Європейська Солідарність</span></button>
       </Link>
-      <Link href="/batkivshina">
+      {/* <Link href="/batkivshina">
           <button className={router.pathname === '/batkivshina' ? styles.linkMenuActive : styles.linkMenu} >Батьківщина</button>
       </Link>
       <Link href="/ob">
@@ -47,7 +47,7 @@ export default function Header() {
       </Link>
       <Link href="/golos">
           <button className={router.pathname === '/golos' ? styles.linkMenuActive : styles.linkMenu} >Голос</button>
-      </Link>
+      </Link> */}
       
       </div>
     </div>
