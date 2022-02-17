@@ -12,8 +12,8 @@ export default function slugi() {
         <div className={styles.grid}>
           <D3BarsPage done={9} not_done={10} in_progress={8} all={27} party={'ЄС'}/>
           <Table data={esPromises} />
+        <p style={{textAlign: 'center', color: '#ccc', margin: '2rem'}}>Європейська солідарність зробила 30 обіцянок, але три з них занадто загальні, то ж їх виконання неможливо перевірити</p>
         </div>
-        <p style={{textAlign: 'center', color: '#ccc'}}>Європейська солідарність зробила 30 обіцянок, але три з них занадто загальні, то ж їх виконання неможливо перевірити</p>
       </main>
     </div>
   );
